@@ -9,7 +9,7 @@ To use, simply import the module and supply the tenant url and credentials.
 ``` js
 const spo = require("@beyondsharepoint/spo-remote-auth");
 
-spo.authenticate("mytenantname.sharepoint.com", "myusername", "mypassword")
+spo.authenticate("mytenantname.sharepoint.com", "myusername@mytenantname.onmicrosoft.com", "mypassword")
     .then(function(ctx) {
         console.log("Success!!");
     }, function() {
@@ -39,7 +39,7 @@ For instance, to upload a file to a document library:
 const spo = require("@beyondsharepoint/spo-remote-auth");
 const URI = require("urijs");
 
-spo.authenticate("mytenantname.sharepoint.com", "myusername", "mypassword")
+spo.authenticate("mytenantname.sharepoint.com", "myusername@mytenantname.onmicrosoft.com", "mypassword")
     .then(function(ctx) {
         //upload a file to 'documents' library.
 
