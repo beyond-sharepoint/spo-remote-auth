@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth.svg?style=svg)](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth)
+
 @bsp/spo-remote-auth
 ---
 This module provides a generic remote authentication implementation against SharePoint online.
