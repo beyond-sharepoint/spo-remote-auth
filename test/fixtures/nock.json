@@ -1,0 +1,169 @@
+[
+  {
+    "scope": "https://login.microsoftonline.com:443",
+    "method": "POST",
+    "path": "/extSTS.srf",
+    "body": "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\"\n      xmlns:a=\"http://www.w3.org/2005/08/addressing\"\n      xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n  <s:Header>\n    <a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue</a:Action>\n    <a:ReplyTo>\n      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>\n    </a:ReplyTo>\n    <a:To s:mustUnderstand=\"1\">https://login.microsoftonline.com/extSTS.srf</a:To>\n    <o:Security s:mustUnderstand=\"1\"\n       xmlns:o=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">\n      <o:UsernameToken>\n        <o:Username>{{{invalid.username}}}</o:Username>\n        <o:Password>{{{invalid.password}}}</o:Password>\n      </o:UsernameToken>\n    </o:Security>\n  </s:Header>\n  <s:Body>\n    <t:RequestSecurityToken xmlns:t=\"http://schemas.xmlsoap.org/ws/2005/02/trust\">\n      <wsp:AppliesTo xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\">\n        <a:EndpointReference>\n          <a:Address>{{{invalid.url}}}</a:Address>\n        </a:EndpointReference>\n      </wsp:AppliesTo>\n      <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>\n      <t:RequestType>http://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>\n      <t:TokenType>urn:oasis:names:tc:SAML:1.0:assertion</t:TokenType>\n    </t:RequestSecurityToken>\n  </s:Body>\n</s:Envelope>",
+    "status": 200,
+    "response": "<?xml version=\"1.0\" encoding=\"utf-8\" ?><S:Envelope xmlns:S=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" xmlns:wst=\"http://schemas.xmlsoap.org/ws/2005/02/trust\" xmlns:psf=\"http://schemas.microsoft.com/Passport/SoapServices/SOAPFault\"><S:Body><S:Fault><S:Code><S:Value>S:Sender</S:Value><S:Subcode><S:Value>wst:FailedAuthentication</S:Value></S:Subcode></S:Code><S:Reason><S:Text xml:lang=\"en-US\">Authentication Failure</S:Text></S:Reason><S:Detail><psf:error><psf:value>0x80048821</psf:value><psf:internalerror><psf:code>0x80041034</psf:code><psf:text>The specified member name is either invalid or empty.&#x000D;&#x000A;</psf:text></psf:internalerror></psf:error></S:Detail></S:Fault></S:Body></S:Envelope>",
+    "headers": {
+      "cache-control": "no-cache",
+      "pragma": "no-cache",
+      "content-type": "application/soap+xml; charset=utf-8",
+      "expires": "-1",
+      "server": "Microsoft-IIS/8.5",
+      "x-xss-protection": "0",
+      "strict-transport-security": "max-age=31536000",
+      "ppserver": "PPV: 30 H: CH1IDOALGN44 V: 0",
+      "p3p": "CP=\"DSP CUR OTPi IND OTRi ONL FIN\"",
+      "set-cookie": [
+        "x-ms-gateway-slice=orgidprod; path=/; secure; HttpOnly",
+        "stsservicecookie=orgidprod; path=/; secure; HttpOnly"
+      ],
+      "x-powered-by": "ASP.NET",
+      "connection": "close"
+    }
+  },
+  {
+    "scope": "https://login.microsoftonline.com:443",
+    "method": "POST",
+    "path": "/extSTS.srf",
+    "body": "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\"\n      xmlns:a=\"http://www.w3.org/2005/08/addressing\"\n      xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n  <s:Header>\n    <a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue</a:Action>\n    <a:ReplyTo>\n      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>\n    </a:ReplyTo>\n    <a:To s:mustUnderstand=\"1\">https://login.microsoftonline.com/extSTS.srf</a:To>\n    <o:Security s:mustUnderstand=\"1\"\n       xmlns:o=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">\n      <o:UsernameToken>\n        <o:Username>{{{valid.username}}}</o:Username>\n        <o:Password>{{{invalid.password}}}</o:Password>\n      </o:UsernameToken>\n    </o:Security>\n  </s:Header>\n  <s:Body>\n    <t:RequestSecurityToken xmlns:t=\"http://schemas.xmlsoap.org/ws/2005/02/trust\">\n      <wsp:AppliesTo xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\">\n        <a:EndpointReference>\n          <a:Address>{{{valid.url}}}</a:Address>\n        </a:EndpointReference>\n      </wsp:AppliesTo>\n      <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>\n      <t:RequestType>http://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>\n      <t:TokenType>urn:oasis:names:tc:SAML:1.0:assertion</t:TokenType>\n    </t:RequestSecurityToken>\n  </s:Body>\n</s:Envelope>",
+    "status": 200,
+    "response": "<?xml version=\"1.0\" encoding=\"utf-8\" ?><S:Envelope xmlns:S=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" xmlns:wst=\"http://schemas.xmlsoap.org/ws/2005/02/trust\" xmlns:psf=\"http://schemas.microsoft.com/Passport/SoapServices/SOAPFault\"><S:Body><S:Fault><S:Code><S:Value>S:Sender</S:Value><S:Subcode><S:Value>wst:FailedAuthentication</S:Value></S:Subcode></S:Code><S:Reason><S:Text xml:lang=\"en-US\">Authentication Failure</S:Text></S:Reason><S:Detail><psf:error><psf:value>0x80048821</psf:value><psf:internalerror><psf:code>0x80041012</psf:code><psf:text>The entered and stored passwords do not match.&#x000D;&#x000A;</psf:text></psf:internalerror></psf:error></S:Detail></S:Fault></S:Body></S:Envelope>",
+    "headers": {
+      "cache-control": "no-cache",
+      "pragma": "no-cache",
+      "content-type": "application/soap+xml; charset=utf-8",
+      "expires": "-1",
+      "server": "Microsoft-IIS/8.5",
+      "x-xss-protection": "0",
+      "strict-transport-security": "max-age=31536000",
+      "ppserver": "PPV: 30 H: CH1IDOLGN10 V: 0",
+      "p3p": "CP=\"DSP CUR OTPi IND OTRi ONL FIN\"",
+      "set-cookie": [
+        "x-ms-gateway-slice=orgidprod; path=/; secure; HttpOnly",
+        "stsservicecookie=orgidprod; path=/; secure; HttpOnly"
+      ],
+      "x-powered-by": "ASP.NET",
+      "connection": "close"
+    }
+  },
+  {
+    "scope": "https://login.microsoftonline.com:443",
+    "method": "POST",
+    "path": "/extSTS.srf",
+    "body": "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\"\n      xmlns:a=\"http://www.w3.org/2005/08/addressing\"\n      xmlns:u=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n  <s:Header>\n    <a:Action s:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue</a:Action>\n    <a:ReplyTo>\n      <a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>\n    </a:ReplyTo>\n    <a:To s:mustUnderstand=\"1\">https://login.microsoftonline.com/extSTS.srf</a:To>\n    <o:Security s:mustUnderstand=\"1\"\n       xmlns:o=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">\n      <o:UsernameToken>\n        <o:Username>{{{valid.username}}}</o:Username>\n        <o:Password>{{{valid.password}}}</o:Password>\n      </o:UsernameToken>\n    </o:Security>\n  </s:Header>\n  <s:Body>\n    <t:RequestSecurityToken xmlns:t=\"http://schemas.xmlsoap.org/ws/2005/02/trust\">\n      <wsp:AppliesTo xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\">\n        <a:EndpointReference>\n          <a:Address>{{{valid.url}}}</a:Address>\n        </a:EndpointReference>\n      </wsp:AppliesTo>\n      <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>\n      <t:RequestType>http://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>\n      <t:TokenType>urn:oasis:names:tc:SAML:1.0:assertion</t:TokenType>\n    </t:RequestSecurityToken>\n  </s:Body>\n</s:Envelope>",
+    "status": 200,
+    "response": "<?xml version=\"1.0\" encoding=\"utf-8\" ?><S:Envelope xmlns:S=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" xmlns:wsa=\"http://www.w3.org/2005/08/addressing\"><S:Header><wsa:Action xmlns:S=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wsa=\"http://www.w3.org/2005/08/addressing\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"Action\" S:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue</wsa:Action><wsa:To xmlns:S=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wsa=\"http://www.w3.org/2005/08/addressing\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"To\" S:mustUnderstand=\"1\">http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security S:mustUnderstand=\"1\"><wsu:Timestamp xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" wsu:Id=\"TS\"><wsu:Created>2016-07-05T19:32:25Z</wsu:Created><wsu:Expires>2016-07-05T19:37:25Z</wsu:Expires></wsu:Timestamp></wsse:Security></S:Header><S:Body><wst:RequestSecurityTokenResponse xmlns:S=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:wst=\"http://schemas.xmlsoap.org/ws/2005/02/trust\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\" xmlns:saml=\"urn:oasis:names:tc:SAML:1.0:assertion\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\" xmlns:psf=\"http://schemas.microsoft.com/Passport/SoapServices/SOAPFault\"><wst:TokenType>urn:passport:compact</wst:TokenType><wsp:AppliesTo xmlns:wsa=\"http://www.w3.org/2005/08/addressing\"><wsa:EndpointReference><wsa:Address>https://tenant.sharepoint.com</wsa:Address></wsa:EndpointReference></wsp:AppliesTo><wst:Lifetime><wsu:Created>2016-07-05T19:32:25Z</wsu:Created><wsu:Expires>2016-07-06T19:32:25Z</wsu:Expires></wst:Lifetime><wst:RequestedSecurityToken><wsse:BinarySecurityToken Id=\"Compact0\">t=12345</wsse:BinarySecurityToken></wst:RequestedSecurityToken><wst:RequestedAttachedReference><wsse:SecurityTokenReference><wsse:Reference URI=\"6cL6PjZc8+sn45OvHTmhJ+K6ttU=\"></wsse:Reference></wsse:SecurityTokenReference></wst:RequestedAttachedReference><wst:RequestedUnattachedReference><wsse:SecurityTokenReference><wsse:Reference URI=\"6cL6PjZc8+sn45OvHTmhJ+K6ttU=\"></wsse:Reference></wsse:SecurityTokenReference></wst:RequestedUnattachedReference></wst:RequestSecurityTokenResponse></S:Body></S:Envelope>\r\n",
+    "headers": {
+      "cache-control": "no-cache",
+      "pragma": "no-cache",
+      "content-type": "application/soap+xml; charset=utf-8",
+      "expires": "-1",
+      "server": "Microsoft-IIS/8.5",
+      "x-xss-protection": "0",
+      "strict-transport-security": "max-age=31536000",
+      "ppserver": "PPV: 30 H: CH1IDOALGN173 V: 0",
+      "p3p": "CP=\"DSP CUR OTPi IND OTRi ONL FIN\"",
+      "set-cookie": [
+        "SASession=; expires=Thu, 30-Oct-1980 16:00:00 GMT;domain=login.microsoftonline.com;secure= ;path=/;HTTPOnly= ;version=1",
+        "x-ms-gateway-slice=orgidprod; path=/; secure; HttpOnly",
+        "stsservicecookie=orgidprod; path=/; secure; HttpOnly"
+      ],
+      "x-powered-by": "ASP.NET",
+      "connection": "close"
+    }
+  },
+  {
+    "scope": "https://tenant.sharepoint.com:443",
+    "method": "POST",
+    "path": "/_forms/default.aspx?wa=wsignin1.0",
+    "body": "t=12345",
+    "status": 302,
+    "response": "<html><head><title>Object moved</title></head><body>\r\n<h2>Object moved to <a href=\"/\">here</a>.</h2>\r\n</body></html>\r\n",
+    "headers": {
+      "cache-control": "no-cache, no-store",
+      "pragma": "no-cache",
+      "content-type": "text/html; charset=utf-8",
+      "expires": "-1",
+      "location": "/",
+      "server": "Microsoft-IIS/8.5",
+      "x-sharepointhealthscore": "0",
+      "x-aspnet-version": "4.0.30319",
+      "set-cookie": [
+        "rtFa=12345; domain=sharepoint.com; path=/; secure; HttpOnly",
+        "FedAuth=12345; path=/; secure; HttpOnly",
+        "RpsContextCookie=; path=/"
+      ],
+      "sprequestguid": "c8548d9d-6078-3000-4655-613af147a589",
+      "request-id": "c8548d9d-6078-3000-4655-613af147a589",
+      "strict-transport-security": "max-age=31536000",
+      "sprequestduration": "193",
+      "spiislatency": "1",
+      "x-powered-by": "ASP.NET",
+      "microsoftsharepointteamservices": "16.0.0.5423",
+      "x-content-type-options": "nosniff",
+      "x-ms-invokeapp": "1; RequireReadOnly",
+      "p3p": "CP=\"ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI\"",
+      "connection": "close"
+    }
+  },
+  {
+    "scope": "https://tenant.sharepoint.com:443",
+    "method": "POST",
+    "path": "/_api/contextinfo",
+    "body": "",
+    "status": 200,
+    "response": {
+      "d": {
+        "GetContextWebInformation": {
+          "__metadata": {
+            "type": "SP.ContextWebInformation"
+          },
+          "FormDigestTimeoutSeconds": 1800,
+          "FormDigestValue": "0x12345,{{{currentDate}}}",
+          "LibraryVersion": "16.0.5423.1210",
+          "SiteFullUrl": "https://tenant.sharepoint.com",
+          "SupportedSchemaVersions": {
+            "__metadata": {
+              "type": "Collection(Edm.String)"
+            },
+            "results": [
+              "14.0.0.0",
+              "15.0.0.0"
+            ]
+          },
+          "WebFullUrl": "https://tenant.sharepoint.com"
+        }
+      }
+    },
+    "headers": {
+      "cache-control": "private, max-age=0",
+      "transfer-encoding": "chunked",
+      "content-type": "application/json;odata=verbose;charset=utf-8",
+      "expires": "Wed, 22 Jun 2016 02:11:24 GMT",
+      "last-modified": "Thu, 07 Jul 2016 02:11:24 GMT",
+      "server": "Microsoft-IIS/8.5",
+      "set-cookie": [
+        "rtFa=xWP3fZmxX/LOa6m/Z/9hvnSfJz1O938UIoAjk/3ClS87Yb3taF70wAftapCg2ph3E5xod1HeS7WScj6l2kNCa3B2qNbLCyRAAVFY7cw9c4QR6bVTpalaOwzgkkq3c52USoDN1Jj2BILELi0H69s7+Rmtjgcl3X72Rwjplg3dnVGOrxI89agvE2ffSUNKbojlsLFA7bdsrRwYSY3eEV05TH8SAjEGMFfQJTv7PMqU3BWycOmo+DkiksIzW8x/Y4CWzExs5I6rhIOfaF2bXSZ6Xc0uqgTIV4NKgjeUXJeUXYHimsi2yHCv6kg9T/opx0FMZOUVUxTh3Xq67WN1UsDvZylemx2dSapfQSYyHuP3yOGUbE7E8+NfJgI3V0snHHjoIAAAAA==; domain=sharepoint.com; path=/; secure; HttpOnly",
+        "FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+RmFsc2UsMGguZnxtZW1iZXJzaGlwfDEwMDM3ZmZlOTgyN2I3NDVAbGl2ZS5jb20sMCMuZnxtZW1iZXJzaGlwfHNlYW5AYmFyaXN0YWxhYnMub25taWNyb3NvZnQuY29tLDEzMTEyNzYzMDgxNjk5ODY2NzsxMzEwOTYwMjk4NzAwMDAwMDAsRmFsc2UseGpNTkljWDI5Y2ZTTnM1VGxWM2FXWUNMSTlXRk5BT1pRMmRoZUVVVjFROStrTlBJUzJDTnBsZWdPbVZkc1l0Nnc3eDFYNzY1My9mZnFzakdXSHNJMTZqTG1SMiswU0hOeEh4ZmpGUGFEa2MxUVdBTDEwNURtWXZyM0haMXJGV0JJd3dITkdIc3hZRWVVZ0VZU1BqdlRwQUlDcVFPU2xHTXFxRFgzZHZ3aW4vQS9xbDdlZ0Nzd0t2cDk0RjFQUGtZZjZNZlN4dnYrTTRvd0lGTkhMOUVlWXdMbXU4cW5YaGdIdk95L0VpMGRFRzR1N2FTNDQ4Z1JNVlpXamRWTCs4OXdFbXpvbXhOckw3OEUwSW5haUFxNjdGbWxQQlRUYUJQelJrK0puYXJMazQ2b0Q1aTZiU2xIWW5UM3R0RFp4ZjQrU3IxbDNNTkJPdkpKb256eTExdkZRPT0saHR0cHM6Ly9iYXJpc3RhbGFicy5zaGFyZXBvaW50LmNvbS88L1NQPg==; path=/; secure; HttpOnly"
+      ],
+      "x-sharepointhealthscore": "0",
+      "x-sp-serverstate": "ReadOnly=0",
+      "dataserviceversion": "3.0",
+      "spclientservicerequestduration": "18",
+      "x-aspnet-version": "4.0.30319",
+      "sprequestguid": "c9548d9d-3041-3000-4655-75f7e269a356",
+      "request-id": "c9548d9d-3041-3000-4655-75f7e269a356",
+      "strict-transport-security": "max-age=31536000",
+      "x-frame-options": "SAMEORIGIN",
+      "x-powered-by": "ASP.NET",
+      "microsoftsharepointteamservices": "16.0.0.5423",
+      "x-content-type-options": "nosniff",
+      "x-ms-invokeapp": "1; RequireReadOnly",
+      "p3p": "CP=\"ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo CNT COM INT NAV ONL PHY PRE PUR UNI\"",
+      "connection": "close"
+    }
+  }
+]

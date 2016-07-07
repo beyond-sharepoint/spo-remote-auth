@@ -1,0 +1,12 @@
+{
+    "valid": {
+        "url": "https://myfaketenant.sharepoint.com",
+        "username": "notARealUserName@myfaketenant.onmicrosoft.com",
+        "password": "thisisnotarealpassword"
+    },
+    "invalid": {
+        "url": "https://mytenant.sharepoint.com",
+        "username": "thisisarealusername@",
+        "password": "thisistherealpassword"
+    }
+}
