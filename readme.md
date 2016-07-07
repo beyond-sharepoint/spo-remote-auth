@@ -108,3 +108,11 @@ It is expected that the live option is specified.
 ``` bash
 $ npm test --  --record --live
 ```
+
+### --recordOutput
+
+To override the default record file name, use --recordOutput
+
+``` bash
+$ npm test --  --record --live --recordOutput nock-ensureContext.json
+```
