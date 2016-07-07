@@ -16,7 +16,7 @@ describe('spo-remote-auth', function () {
         try {
             var result = yield spRemoteAuth.authenticate(testSettings.invalid.url, testSettings.invalid.username, testSettings.invalid.password);
         }
-        catch(ex) {
+        catch (ex) {
             thrown = true;
             message = ex.message;
         }
@@ -32,7 +32,7 @@ describe('spo-remote-auth', function () {
         try {
             var result = yield spRemoteAuth.authenticate(testSettings.valid.url, testSettings.valid.username, testSettings.invalid.password);
         }
-        catch(ex) {
+        catch (ex) {
             thrown = true;
             message = ex.message;
         }

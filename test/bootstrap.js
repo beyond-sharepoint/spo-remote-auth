@@ -48,7 +48,7 @@ before(function () {
 
         //Post-process the nock file and replace with values in settings.
         for (let def of nockDefs) {
-            
+
             if (def.scope === "https://tenant.sharepoint.com:443")
                 def.scope = global.testSettings.valid.url;
 
