@@ -33,7 +33,7 @@ A [request](http://github.com/request/request) instance with the defaults set to
 
 Use this to make further authenticated calls with SharePoint online.
 
-For instance:
+For instance, to upload a file to a document library:
 
 ``` js
 const spo = require("@bsp/spo-remote-auth");
@@ -53,7 +53,7 @@ spo.authenticate("mytenantname.sharepoint.com", "myusername", "mypassword")
         });
     });
 ```
-
+Other modules on [Beyond SharePoint](https://github.com/beyond-sharepoint) provide concerted functionality.
 
 Unit Testing
 ---
