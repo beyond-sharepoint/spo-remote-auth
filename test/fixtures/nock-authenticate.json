@@ -124,7 +124,7 @@
           "FormDigestTimeoutSeconds": 1800,
           "FormDigestValue": "0x12345,{{{currentDate}}}",
           "LibraryVersion": "16.0.5423.1210",
-          "SiteFullUrl": "https://tenant.sharepoint.com",
+          "SiteFullUrl": "{{{valid.url}}}",
           "SupportedSchemaVersions": {
             "__metadata": {
               "type": "Collection(Edm.String)"
@@ -134,7 +134,7 @@
               "15.0.0.0"
             ]
           },
-          "WebFullUrl": "https://tenant.sharepoint.com"
+          "WebFullUrl": "{{{valid.url}}}"
         }
       }
     },
@@ -146,8 +146,8 @@
       "last-modified": "Thu, 07 Jul 2016 02:11:24 GMT",
       "server": "Microsoft-IIS/8.5",
       "set-cookie": [
-        "rtFa=xWP3fZmxX/LOa6m/Z/9hvnSfJz1O938UIoAjk/3ClS87Yb3taF70wAftapCg2ph3E5xod1HeS7WScj6l2kNCa3B2qNbLCyRAAVFY7cw9c4QR6bVTpalaOwzgkkq3c52USoDN1Jj2BILELi0H69s7+Rmtjgcl3X72Rwjplg3dnVGOrxI89agvE2ffSUNKbojlsLFA7bdsrRwYSY3eEV05TH8SAjEGMFfQJTv7PMqU3BWycOmo+DkiksIzW8x/Y4CWzExs5I6rhIOfaF2bXSZ6Xc0uqgTIV4NKgjeUXJeUXYHimsi2yHCv6kg9T/opx0FMZOUVUxTh3Xq67WN1UsDvZylemx2dSapfQSYyHuP3yOGUbE7E8+NfJgI3V0snHHjoIAAAAA==; domain=sharepoint.com; path=/; secure; HttpOnly",
-        "FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+RmFsc2UsMGguZnxtZW1iZXJzaGlwfDEwMDM3ZmZlOTgyN2I3NDVAbGl2ZS5jb20sMCMuZnxtZW1iZXJzaGlwfHNlYW5AYmFyaXN0YWxhYnMub25taWNyb3NvZnQuY29tLDEzMTEyNzYzMDgxNjk5ODY2NzsxMzEwOTYwMjk4NzAwMDAwMDAsRmFsc2UseGpNTkljWDI5Y2ZTTnM1VGxWM2FXWUNMSTlXRk5BT1pRMmRoZUVVVjFROStrTlBJUzJDTnBsZWdPbVZkc1l0Nnc3eDFYNzY1My9mZnFzakdXSHNJMTZqTG1SMiswU0hOeEh4ZmpGUGFEa2MxUVdBTDEwNURtWXZyM0haMXJGV0JJd3dITkdIc3hZRWVVZ0VZU1BqdlRwQUlDcVFPU2xHTXFxRFgzZHZ3aW4vQS9xbDdlZ0Nzd0t2cDk0RjFQUGtZZjZNZlN4dnYrTTRvd0lGTkhMOUVlWXdMbXU4cW5YaGdIdk95L0VpMGRFRzR1N2FTNDQ4Z1JNVlpXamRWTCs4OXdFbXpvbXhOckw3OEUwSW5haUFxNjdGbWxQQlRUYUJQelJrK0puYXJMazQ2b0Q1aTZiU2xIWW5UM3R0RFp4ZjQrU3IxbDNNTkJPdkpKb256eTExdkZRPT0saHR0cHM6Ly9iYXJpc3RhbGFicy5zaGFyZXBvaW50LmNvbS88L1NQPg==; path=/; secure; HttpOnly"
+        "rtFa=12345; domain=sharepoint.com; path=/; secure; HttpOnly",
+        "FedAuth=12345; path=/; secure; HttpOnly"
       ],
       "x-sharepointhealthscore": "0",
       "x-sp-serverstate": "ReadOnly=0",

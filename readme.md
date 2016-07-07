@@ -1,18 +1,68 @@
-beyond-sharepoint
+@bsp/spo-remote-auth
 ---
+This module provides a generic remote authentication implementation against SharePoint online.
 
+To use, simply import the module and supply the tenant url and credentials.
+
+``` js
+const spo = require("@bsp/spo-remote-auth");
+
+spo.authenticate("mytenantname.sharepoint.com", "myusername", "mypassword")
+    .then(function(ctx) {
+        console.log("Success!!");
+    }, function() {
+        console.log("something went wrong.");
+    });
+```
+
+The object that is returned when authentication succeeds contains the following properties:
+
+#### contextInfo
+
+Object that contains the context info returned by <tenantname>.sharepoint.com/_api/contextinfo
+
+#### ensureContextInfo
+
+Helper function that renews the context info if it has expired.
+
+#### request
+
+A [request](http://github.com/request/request) instance with the defaults set to what needs to be passed to SPO.
+
+Use this to make further authenticated calls with SharePoint online.
+
+For instance:
+
+``` js
+const spo = require("@bsp/spo-remote-auth");
+const URI = require("urijs");
+
+spo.authenticate("mytenantname.sharepoint.com", "myusername", "mypassword")
+    .then(function(ctx) {
+        //upload a file to 'documents' library.
+
+        let docLibUrl = "documents";
+        let fileName = "test1234.txt";
+
+        ctx.request({
+            method: "POST",
+            url: URI.joinPaths("/_api/web/", `GetFolderByServerRelativeUrl('${URI.encode(docLibUrl)}')/`, "files/", `add(url='${URI.encode(fileName)}',overwrite=true)`).href(),
+            body: "Hello, world!"
+        });
+    });
+```
 
 
 Unit Testing
 ---
-By default, the beyond-sharepoint unit tests use mock service responses.
+spo-remote-auth uses mocha/chai based unit tests to ensure quality.
 
-To unit test against the actual SharePoint online services, use the --live option with mocha.
+By default, the unit tests use mock service responses via [nock](https://github.com/node-nock/nock).
 
-ex:
+just run ```npm test``` at the cli to run the tests:
 
 ``` bash
-$ mocha --live
+$ npm test
 
     ✓ should contain an authenticate method
     ✓ should fail with invalid user
@@ -20,13 +70,41 @@ $ mocha --live
     ✓ should authenticate and contain a context info that expires in the future.
 ```
 
-beyond-sharepoint uses credentials and urls for testing in test/fixtures/settings-test.json.
+## Unit Test Options
 
-To supply real credentials, either modify this file in your dev environment, or use the --settings
-option to specify the name of the settings file in the fixtures folder.
+### --live
+To test against the actual SharePoint online services instead of the mocks, use the --live option.
 
 ex:
 
 ``` bash
-$ mocha --settings settings-prod.json
+$ npm test -- --live
+
+    ✓ should contain an authenticate method
+    ✓ should fail with invalid user
+    ✓ should fail with invalid password
+    ✓ should authenticate and contain a context info that expires in the future.
+```
+
+### --settings
+
+You'll quickly find that you'll need to supply your own credentials and tenant name in order to test live,
+to do so, you can modify the values in /test/fixtures/settings-test.json.
+
+However, a better way is to use the --settings option to specify the name of a settings file that you provide.
+Note that this file is relative to the /test/fixtures folder.
+
+``` bash
+$ npm test -- --settings settings-prod.json --live
+```
+
+settings-prod.json is included in .gitignore by default.
+
+### --record
+
+To aid in debugging, the --record option records all interaction with SPO and places it in /test/tmp/nock-test.json. 
+It is expected that the live option is specified.
+
+``` bash
+$ npm test --  --record --live
 ```

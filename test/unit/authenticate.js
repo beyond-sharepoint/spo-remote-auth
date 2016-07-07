@@ -4,52 +4,59 @@ require('mocha-generators').install();
 const moment = require("moment");
 
 describe('spo-remote-auth', function () {
-    it('should contain an authenticate method', function* () {
+    describe('authenticate', function () {
 
-        expect(spRemoteAuth.authenticate).to.be.a("function");
-    });
+        before(function () {
+            //If we're not live, setup the nock from the pre-recorded fixture.
+            if (!isLive) {
+                let nockDefs = postProcessNockFixture("nock-authenticate.json");
+                //  Load the nocks from pre-processed definitions.
+                let nocks = nock.define(nockDefs);
+            }
+        });
 
-    it('should fail with invalid user', function* () {
-        let thrown = false;
-        let message = "";
+        it('should contain an authenticate method', function* () {
+            expect(spRemoteAuth.authenticate).to.be.a("function");
+        });
 
-        try {
-            var result = yield spRemoteAuth.authenticate(testSettings.invalid.url, testSettings.invalid.username, testSettings.invalid.password);
-        }
-        catch (ex) {
-            thrown = true;
-            message = ex.message;
-        }
+        it('should fail with invalid user', function* () {
+            let thrown = false;
+            let message = "";
 
-        expect(thrown).to.be.true;
-        expect(message).to.be.equal("The specified member name is either invalid or empty.");
-    });
+            try {
+                var result = yield spRemoteAuth.authenticate(testSettings.invalid.url, testSettings.invalid.username, testSettings.invalid.password);
+            }
+            catch (ex) {
+                thrown = true;
+                message = ex.message;
+            }
 
-    it('should fail with invalid password', function* () {
-        let thrown = false;
-        let message = "";
+            expect(thrown).to.be.true;
+            expect(message).to.be.equal("The specified member name is either invalid or empty.");
+        });
 
-        try {
-            var result = yield spRemoteAuth.authenticate(testSettings.valid.url, testSettings.valid.username, testSettings.invalid.password);
-        }
-        catch (ex) {
-            thrown = true;
-            message = ex.message;
-        }
+        it('should fail with invalid password', function* () {
+            let thrown = false;
+            let message = "";
 
-        expect(thrown).to.be.true;
-        expect(message).to.be.equal("The entered and stored passwords do not match.");
-    });
+            try {
+                var result = yield spRemoteAuth.authenticate(testSettings.valid.url, testSettings.valid.username, testSettings.invalid.password);
+            }
+            catch (ex) {
+                thrown = true;
+                message = ex.message;
+            }
 
-    it('should authenticate and contain a context info that expires in the future.', function* () {
+            expect(thrown).to.be.true;
+            expect(message).to.be.equal("The entered and stored passwords do not match.");
+        });
 
-        let result = yield spRemoteAuth.authenticate(testSettings.valid.url, testSettings.valid.username, testSettings.valid.password);
+        it('should authenticate and contain a context info that expires in the future.', function* () {
 
-        expect(result).to.not.equal(undefined);
-        expect(moment(result.contextInfo.expires).isAfter(moment())).to.be.true;
-    });
+            let result = yield spRemoteAuth.authenticate(testSettings.valid.url, testSettings.valid.username, testSettings.valid.password);
 
-    it('should authenticate', function* () {
-
+            expect(result).to.not.equal(undefined);
+            expect(moment(result.contextInfo.expires).isAfter(moment())).to.be.true;
+        });
     });
 });
