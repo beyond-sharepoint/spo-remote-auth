@@ -1,13 +1,13 @@
 [![CircleCI](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth.svg?style=svg)](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth)      [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 
-@beyondsharepoint/spo-remote-auth
+@beyond-sharepoint/spo-remote-auth
 ---
-This module provides a generic remote authentication implementation against SharePoint online.
+Provides a generic remote authentication implementation against SharePoint online.
 
 To use, simply import the module and supply the tenant url and credentials.
 
 ``` js
-const spo = require("@beyondsharepoint/spo-remote-auth");
+const spo = require("@beyond-sharepoint/spo-remote-auth");
 
 spo.authenticate("mytenantname.sharepoint.com", "myusername@mytenantname.onmicrosoft.com", "mypassword")
     .then(function(ctx) {
@@ -36,7 +36,7 @@ Use this to make further authenticated calls with SharePoint online.
 For instance, to upload a file to a document library:
 
 ``` js
-const spo = require("@beyondsharepoint/spo-remote-auth");
+const spo = require("@beyond-sharepoint/spo-remote-auth");
 const URI = require("urijs");
 
 spo.authenticate("mytenantname.sharepoint.com", "myusername@mytenantname.onmicrosoft.com", "mypassword")
@@ -53,7 +53,7 @@ spo.authenticate("mytenantname.sharepoint.com", "myusername@mytenantname.onmicro
         });
     });
 ```
-Other modules on [Beyond SharePoint](https://github.com/beyond-sharepoint) provide concerted functionality.
+Other packages on [Beyond SharePoint](https://github.com/beyond-sharepoint) provide concerted functionality.
 
 Unit Testing
 ---
