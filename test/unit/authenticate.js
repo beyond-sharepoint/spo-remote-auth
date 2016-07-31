@@ -15,7 +15,11 @@ describe('spo-remote-auth', function () {
             }
         });
 
-        it('should contain an authenticate method', function* () {
+        it('should export a function', function* () {
+            expect(spRemoteAuth).to.be.a("function");
+        });
+
+        it('should contain an authenticate function', function* () {
             expect(spRemoteAuth.authenticate).to.be.a("function");
         });
 
@@ -54,6 +58,18 @@ describe('spo-remote-auth', function () {
         it('should authenticate and contain a context info that expires in the future.', function* () {
 
             let result = yield spRemoteAuth.authenticate(testSettings.valid.url, testSettings.valid.username, testSettings.valid.password);
+
+            expect(result).to.not.equal(undefined);
+            expect(moment(result.contextInfo.expires).isAfter(moment())).to.be.true;
+        });
+
+        it('should authenticate via exported function using a settings object', function* () {
+
+            let result = yield spRemoteAuth({
+                tenantDomain: testSettings.valid.url,
+                username: testSettings.valid.username,
+                password: testSettings.valid.password}
+                );
 
             expect(result).to.not.equal(undefined);
             expect(moment(result.contextInfo.expires).isAfter(moment())).to.be.true;
