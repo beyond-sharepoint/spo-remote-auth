@@ -1,6 +1,6 @@
 {
   "name": "@beyond-sharepoint/spo-remote-auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides a remote authentication implementation for SharePoint Online",
   "main": "/lib/index.js",
   "scripts": {
