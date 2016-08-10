@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beyond-sharepoint/spo-remote-authentication.git"
+    "url": "git+https://github.com/beyond-sharepoint/spo-remote-auth.git"
   },
   "keywords": [
     "SharePoint Online",
@@ -19,9 +19,9 @@
   "author": "Sean McLellan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/beyond-sharepoint/spo-remote-authentication/issues"
+    "url": "https://github.com/beyond-sharepoint/spo-remote-auth/issues"
   },
-  "homepage": "https://github.com/beyond-sharepoint/spo-remote-authentication#readme",
+  "homepage": "https://github.com/beyond-sharepoint/spo-remote-auth#readme",
   "dependencies": {
     "bluebird": "^3.4.1",
     "bluebird-co": "^2.1.2",
