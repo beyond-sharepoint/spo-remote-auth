@@ -1,1 +1,9 @@
 node_modules
+.DS_Store
+test/fixtures/settings-prod.json
+test/tmp
+test/DevTools Extensions
+.vs/
+.vscode/
+coverage/
+npm-debug.log
