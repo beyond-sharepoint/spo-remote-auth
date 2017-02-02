@@ -1,4 +1,6 @@
-[![CircleCI](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth.svg?style=svg)](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth)      [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
+[![CircleCI](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth.svg?style=svg)](https://circleci.com/gh/beyond-sharepoint/spo-remote-auth)
+![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)
+![David](https://david-dm.org/beyond-sharepoint/ntlm-remote-auth.svg)
 
 @beyond-sharepoint/spo-remote-auth
 ---
