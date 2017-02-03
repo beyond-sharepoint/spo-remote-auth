@@ -4,7 +4,11 @@
   "description": "Provides a remote authentication implementation for SharePoint Online",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node_modules/.bin/mocha",
+    "record-all": "npm run record-authenticate && npm run record-ensureContextInfo && npm run record-integration",
+    "record-authenticate": "npm run test -- --settings settings-prod.json --live --record --recordOutput 'nock-authenticate.json' --grep 'authenticate'",
+    "record-ensureContextInfo": "npm run test -- --settings settings-prod.json --live --record --recordOutput 'nock-ensureContextInfo.json' --grep 'ensureContextInfo'",
+    "record-integration": "npm run test -- --settings settings-prod.json --live --record --recordOutput 'nock-integration.json' --grep 'integration'"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,7 @@
     "mustache": "^2.2.1",
     "request": "^2.72.0",
     "urijs": "^1.18.1",
+    "xml2js": "^0.4.17",
     "xml2json": "^0.11.0"
   },
   "devDependencies": {
