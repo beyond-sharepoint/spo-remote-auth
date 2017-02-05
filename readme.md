@@ -31,7 +31,7 @@ Helper function that renews the context info if it has expired.
 
 #### request
 
-A [request](http://github.com/request/request) instance with the defaults set to what needs to be passed to SPO.
+A request function similar to [request](http://github.com/request/request) that can be used to make authenticated calls with SPO.
 
 Use this to make further authenticated calls with SharePoint online.
 
@@ -55,6 +55,9 @@ spo.authenticate("https://mytenantname.sharepoint.com", "myusername@mytenantname
         });
     });
 ```
+
+The request function returns a promise that automatically renews ContextInfo if needed and makes the request to SharePoint.
+
 Other packages on [Beyond SharePoint](https://github.com/beyond-sharepoint) provide concerted functionality.
 
 Unit Testing
