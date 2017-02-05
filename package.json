@@ -28,7 +28,6 @@
   "homepage": "https://github.com/beyond-sharepoint/spo-remote-auth#readme",
   "dependencies": {
     "bluebird": "^3.4.1",
-    "bluebird-co": "^2.1.2",
     "lodash": "^4.13.1",
     "mustache": "^2.2.1",
     "request": "^2.72.0",
