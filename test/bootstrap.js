@@ -115,33 +115,7 @@ after(function () {
                     callObject.body = callObject.body.replace(new RegExp(regExpEscape(testSettings.invalid.url, "gm")), "{{{invalid.url}}}");
                 }
             }
-
-            //Rawheaders nonsense.
-            // if (callObject.rawHeaders) {
-            //     callObject.headers = {};
-
-            //     for (let i = 0; i < callObject.rawHeaders.length; i += 2) {
-            //         let key = callObject.rawHeaders[i].toLowerCase();
-            //         //Allow for multiple cookies, such as Set-Cookie
-            //         if (callObject.headers[key]) {
-            //             if (_.isArray(callObject.headers[key])) {
-            //                 callObject.headers[key].push(callObject.rawHeaders[i + 1]);
-            //             }
-            //             else {
-            //                 let tmp = callObject.headers[key];
-            //                 callObject.headers[key] = [];
-
-            //                 callObject.headers[key].push(tmp);
-            //                 callObject.headers[key].push(callObject.rawHeaders[i + 1]);
-            //             }
-            //         }
-            //         else {
-            //             callObject.headers[key] = callObject.rawHeaders[i + 1];
-            //         }
-            //     }
-            //     delete callObject.rawHeaders;
-            // }
-
+            
             if (callObject.headers) {
                 for (let header in callObject.headers) {
                     let headerLower = header.toLowerCase();
@@ -169,22 +143,6 @@ after(function () {
                             break;
                     }
                 }
-
-            //     //The flip-side of the rawheaders nonsense.
-            //     callObject.rawHeaders = [];
-            //     for (let header in callObject.headers) {
-            //         if (_.isArray(callObject.headers[header])) {
-            //             for(let subHeader of callObject.headers[header]) {
-            //                 callObject.rawHeaders.push(header);
-            //                 callObject.rawHeaders.push(subHeader);
-            //             }
-            //         }
-            //         else {
-            //             callObject.rawHeaders.push(header);
-            //             callObject.rawHeaders.push(callObject.headers[header]);
-            //         }
-            //     }
-            //     delete callObject.headers;
             }
 
             if (callObject.response) {
